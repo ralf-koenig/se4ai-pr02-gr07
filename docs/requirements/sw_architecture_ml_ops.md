@@ -1,6 +1,4 @@
-# Vorhersage von Immobilienpreisen
-
-smba: Passt safe auf die Aufgabenstellung und sollte sich in dem gesetzten Zeitrahmen realisieren lassen.
+# Software-Architektur, ML Ops und Tools für den Wohnungspreisschätzer in Leipzig
 
 ### 1. Experiment Tracking
 

@@ -1,13 +1,8 @@
-## Anforderungen / Requirements
+## Meta-Anforderungen aus der Aufgabenstellung / Requirements
 
 Siehe [Projektbeschreibung / Zweites Projekt (updated)](https://moodle2.uni-leipzig.de/mod/resource/view.php?id=1856858&redirect=1)
 
-Uns ist bewusst, dass nicht jede Idee alle Anforderungen hundertprozentig abdecken kann und sich
-die konkrete Ausgestaltung immer nach dem von euch gewählten Thema richten wird.
-Keine zu strenge Auslegung. Wichtig ist uns eher, dass das Thema "rund" ist und ihr euch mit den einzelnen 
-Teilen/Anforderungen auseinandersetzt, indem sie -- projektspezifisch -- umgesetzt werden. 
-
-Vollständigkeit der Anforderungen wichtiger als der Funktionsumfang.
+Vollständigkeit der Anforderungen im Projekt wichtiger als der Funktionsumfang.
 
 ### 0. Thema und Mehrwert, Rohdaten, Trainingsdaten
 Jede Gruppe kann das Thema ihres Projektes grundsätzlich frei wählen. Einzige
