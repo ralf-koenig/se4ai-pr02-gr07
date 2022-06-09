@@ -9,6 +9,8 @@
 
 ### Angebotspreise von Wohnungen
   * fertiger Datensatz: https://www.kaggle.com/ -> Wohnungs- und Hauspreise von Boston und Kalifornien
+    * damit könnte man flott schon mal loslegen und eine ML-Komponente bauen
+    * aber halt für die Preise und Features, die dort drin sind
   * sonst eigene Rohdatengewinnung aus Immobilienplattformen
     * Scraping von ImmoScout: https://www.youtube.com/watch?v=uo6KsoB4n1U
     * Immoscout API: https://api.immobilienscout24.de/main/api-products/
@@ -33,7 +35,13 @@
   * zweites Projekt könnte ein Classifier in eine Preiskategorie werden
 
 ## Herausforderungen bei der Vorhersage
-* Komplexe Preisbildung → Wohnungspreis bildet sich aus vielen Fakten, denn Wohnung hat viele Eigenschaften, z.B.
+
+Komplexe Preisbildung wegen Vielzahl von Features
+
+### Einmalkosten der Wohnung
+
+Der Wohnungspreis bildet sich aus vielen Fakten. Eine Wohnung hat viele Eigenschaften, z.B.
+
   * Größe der Wohnung in Quadratmeter, Anzahl Zimmer der verschiedenen Typen (Wohnräume, Schlafzimmer, Bad, Küche)
   * Schnitt der Zimmer
   * Lage in einem Gebäude (z.B. EG, Dachgeschoss, Souterrain)
@@ -55,11 +63,26 @@
   * Ausstattung der Wohnung (Altersgerecht, Rolladen, Markisen, Balkon/Terrasse)
   * Ausstattung des Gebäudes an sich (Aufzug, Tiefgarage, Garten, ...)
   * Einfluss von Umweltrisiken wie Überschwemmungen, Starkregen, Abschattung
+  * Nebenkosten für Makler
   
-* Käufer haben diverse Folgekosten und beziehen das bei der Kaufentscheidung mit ein
+### Folge- und Betriebskosten
+
+Die Folge- und Betriebskosten koppeln rück auf den Preis der Wohnung an sich. 
+Käufer beziehen diese Folgekosten in die Kaufentscheidung mit ein.
+
   * Kosten der Arbeitswege abhängig von der Entfernung zur Arbeitsstelle, Home Office verändert das
-  * Kosten für Sanierung/Renovierung/Ausbau der Wohnung an sich
-  * Kosten für Gebäudesanierung
+  * Kosten für Sanierung/Renovierung/Ausbau/Umbau der Wohnung an sich
+  * Kosten für Gebäudesanierung und dessen Ausstattung
   * Kosten für Heizung und Warmwasser
-  * Kosten für Strom (PV auf dem Dach kann das verändern)
+  * Kosten für Strom (Photovoltaik auf dem Dach kann das verändern)
   * Betriebskosten für Energie, Müllentsorgung, Gartenpflege, etc.
+  * Grundsteuer
+
+### Gesamtwirtschaftliche Rahmenbedingungen
+
+Auch diese koppeln rück. Sie lassen einen Immobilienmarkt erhitzen oder abkühlen.
+
+* Entwicklung der Inflation, Löhne, Zinsen
+* Entwicklung am Aktienmarkt
+* Immobilien als Wertanlage / "Betongold"
+* Spekulation mit Immobilien
