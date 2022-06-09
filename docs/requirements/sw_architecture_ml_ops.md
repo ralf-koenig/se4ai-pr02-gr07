@@ -1,5 +1,9 @@
 # Software-Architektur, ML Ops und Tools für den Wohnungspreisschätzer in Leipzig
 
+Struktur eng orientiert an den Meta-Anforderungen aus der Übungsbeschreibung
+
+für Präsentation am 20.06.202 in ein Flow-Chart als Abbildung umformen
+
 ### 1. Experiment Tracking
 
 ### 2. Versionierung von Daten und Modellen
