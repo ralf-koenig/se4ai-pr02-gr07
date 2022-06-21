@@ -10,24 +10,22 @@
 
 Der Wohnungspreisschätzer in Leipzig soll zwei wesentliche User Stories abdecken:
 
-1) Als potenzieller **Kaufinteressent einer Wohnung** in Leipzig möchte ich zu einem existierenden 
-Wohnungsangebot aus einer Vergleichsplattform für Wohnungen (z.B. ImmobilienScout24) eine
-Preisspanne wissen, zu welchem Angebotspreisen vergleichbare Wohnungen angeboten werden. Die KI-Komponente
-findet mit der zunächst abstrakt scheinenden Metrik der "Vergleichbarkeit" (letztlich sind Wohnungen ja
-Unikate) eine Menge von Angeboten und berechnet dann eine Preisspanne. 
-Der Mehrwert für den Kaufinteressenten ist die schnelle Einschätzbarkeit, wie das konkrete Angebot im Markt
-in etwa positioniert ist.
+1) Als potenzieller **Kaufinteressent einer Wohnung** in Leipzig möchte ich zu einer Wunschliste 
+von Merkmalen einer potenziellen Wohnung eine Preisspanne wissen, zu welchem Angebotspreisen vergleichbare Wohnungen 
+angeboten werden. Die KI-Komponente berechnet mittels Regression oder Klassifikation dann eine Preisspanne. 
+Der Mehrwert für den Kaufinteressenten ist die schnelle Übersicht, wie Veränderungen an den Wunschparametern 
+in etwa den Preis beeinflussen.
 
-   - Eingabe: Angebots-ID
-   - Ausgabe: Liste von Angebots-IDs von vergleichbaren Angeboten, Spanne an Angebotspreisen
+   - Eingabe: Features einer Wohnung in Leipzig
+   - Ausgabe: Spanne im Angebotspreis, Genauigkeit
 
-2) Als potenzieller **Anbieter einer Wohnung** in Leipzig möchte ich vor dem Anbieten einer Wohnung eine 
+3) Als potenzieller **Anbieter einer Wohnung** in Leipzig möchte ich vor dem Anbieten einer Wohnung eine 
 Angebotspreisspanne ermitteln, die sich aus realen Vergleichsangeboten ergibt.
 
     - Eingabe: Features einer Wohnung in Leipzig
-    - Ausgabe: Liste von Angebots-IDs von vergleichbaren Angeboten, Spanne an Angebotspreisen
+    - Ausgabe: Spanne im Angebotspreis, Genauigkeit
 
-Im Prinzip ist User Story 2 ähnlich zu User Story 1, aber die Wohnung muss dafür nicht auf dem Portal 
+User Story 1 und 2 sind ähnlich, aber die Wohnung muss dafür nicht auf dem Portal 
 eingestellt werden. Das spart den Anbieter Kosten (für das Einstellen und Verwalten) und ermöglicht einen
 Marktvergleich ohne Offenlegung der eigenen Daten.
 
@@ -49,10 +47,8 @@ Pflichtparameter
 ## Modell 
 <!-- Define model type, parameters, metrics, dimensions, adaptability, portability. -->
 
-* die Anwendung verlangt eine Art Ähnlichkeitssuche und damit eine Art Clustering
-* Parameter: 
-  * Mindestähnlichkeit: abstrakter Parameter, damit ein anderes Wohnungsangebot in die Vergleichsliste einbezogen wird
-  * maximale Anzahl der Vergleichsangebote (Top-N, eine Art Clustergröße)
+* die Anwendung kann entweder mit Regressionsmethoden arbeiten (auf metrischen Features)
+oder mit Klassifikationsmethoden in eine Preiskategorie
 
 ## Metriken für das Echtzeit-Monitoring der in Produktion befindlichen Modelle
 <!-- Enable a continuous improvement and early data/model shift detection -->
@@ -62,14 +58,14 @@ Pflichtparameter
 ## Menschliche Einflussfaktoren
 <!-- Define how humans react on, for example, automated decisions -->
 
-* Menschen könnten einige oder alle der ausgewählten Vergleichsangebote von Wohnungen als unpassend empfinden, 
-dafür soll eine Feedback-Funktion integriert werden. Jedoch ist die Auswahl der Vergleichswohnungen auch 
-recht beschränkt durch die geringe Zahl von Wohnungsangeboten in Leipzig.
+* Menschen könnten die vorgeschlagene Preisspanne von Wohnungen oder die Genauigkeit als unpassend empfinden, 
+dafür soll eine Feedback-Funktion integriert werden. Dann können Nutzer selbst einen Preis vorschlagen
+und das ggf. mit einem Vergleichsangebot ergänzen.
 
 ## Ethische Anforderungen
 <!-- Define what ethical decisions are made by the system and how ethical aspects will be addressed. -->
 
-* das System kann verwendet werden, um preisgünstige Wohnangebote schneller zu entdecken und den Markt dort
+* das System könnte verwendet werden, um preisgünstige Wohnangebote schneller zu entdecken und den Markt dort
 automatisiert leer zu kaufen mit einem Geschwindigkeitsvorteil gegenüber anderen. Das nehmen wir in Kauf.
 * sonst keine Anforderungen
 
